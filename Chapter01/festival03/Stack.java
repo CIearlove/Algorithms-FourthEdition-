@@ -12,7 +12,6 @@ public class Stack<Item> implements Iterable<Item>{
 	private int N;//元素数量
 	
 	public Stack(){
-		
 	}
 	public void push(Item item){
 		//向栈顶添加元素
