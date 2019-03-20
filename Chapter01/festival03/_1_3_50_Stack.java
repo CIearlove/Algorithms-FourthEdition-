@@ -2,7 +2,15 @@ package festival03;
 
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
-
+/**
+ * 思路：
+ * 用一个计数器记录push（）和pop（）操作的次数。
+ * 在创建迭代器时，将该值记录到Iterator的一个实例变量中。
+ * 在每次调用hasNext（）和next（）之前，检查该值是否发生了变化，如果变化则抛出异常。
+ * @author Administrator
+ *
+ * @param <Item>
+ */
 public class _1_3_50_Stack<Item> implements Iterable<Item>{
 	private class Node{
 		Item item;
