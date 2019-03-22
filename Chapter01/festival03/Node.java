@@ -1,6 +1,6 @@
 package festival03;
 
-public class Node<Item> {
+public class Node<Item>{
 	Item item;
 	Node<Item> next;
 	
