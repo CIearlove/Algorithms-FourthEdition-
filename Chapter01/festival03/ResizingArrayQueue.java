@@ -35,10 +35,11 @@ public class ResizingArrayQueue<Item> implements Iterable<Item> {
 	public Item dequeue(){
 		if(isEmpty())
 			throw new RuntimeException("Queue is empty");
-		N--;
+		
 		Item item = a[head];
 		a[head] = null;
 		head = (head + 1) % a.length;
+		N--;
 		if(N>=0 && N == a.length/4){
 			resize(a.length/2);
 		}
@@ -46,6 +47,8 @@ public class ResizingArrayQueue<Item> implements Iterable<Item> {
 	}
 	/**
 	 * 将大小为N《=max的栈移动到一个新的大小为max的数组中
+	 * head = 0;tail = N.
+	 * 这个思想很有水平
 	 * @param max
 	 */
 	private void resize(int max){
