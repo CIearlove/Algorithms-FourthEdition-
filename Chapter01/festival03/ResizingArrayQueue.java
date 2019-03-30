@@ -52,30 +52,14 @@ public class ResizingArrayQueue<Item> implements Iterable<Item> {
 	 * @param max
 	 */
 	private void resize(int max){
-		/*
-		Item[] temp = (Item[])new Object[max];
-		int cur = head, k = 0;
-		do{
-			temp[k++] = a[cur];
-			cur = (cur+1)%a.length;
-		}while(cur != tail);
 		
-		head = 0;
-		tail = N;
-		a = temp;
-		*/
 		Item[] temp = (Item[])new Object[max];
 		int cur = head, k = 0;
 		do{
 			temp[k++] = a[cur];
 			cur = (cur+1)%a.length;
 		}while(cur != tail);
-		/*
-		for(int i=head,j=0;i<tail;i++){
-			temp[j++] = a[i];
-			i = (i+1)%a.length;
-		}
-		*/
+	
 		head = 0;
 		tail = N;
 		a = temp;
