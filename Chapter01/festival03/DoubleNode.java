@@ -53,13 +53,14 @@ public class DoubleNode<Item> {
 			this.prev.next = this.next;
 		if(this.next!=null)//不为尾结点
 			this.next.prev = this.prev;
+		StdOut.print(item);
 		//this.prev = null;
 		//this.next = null;
 		return item;
 		
 	}
 	/**
-	 * 通过链表中某一结点，顺序遍历链表
+	 * 通过链表中某一结点，顺序遍历链表.不适用于环形链表。
 	 */
 	public void print(){
 		DoubleNode<Item> current = this;
