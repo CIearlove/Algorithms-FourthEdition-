@@ -6,11 +6,17 @@ package festival04;
  */
 public class Stopwatch {
 	private final long start;
-	//创建一个计时器
+	/**
+	 * 创建一个计时器
+	 */
 	public Stopwatch(){
 		start = System.currentTimeMillis();
 	}
-	//返回对象创建以来所经过的时间
+	/**
+	 * 返回对象创建以来所经过的时间.
+	 * 单位：秒.
+	 * @return
+	 */
 	public double elapsedTime(){
 		long now = System.currentTimeMillis();
 		return (now - start)/1000.0;
