@@ -17,6 +17,9 @@ public class SortCompare {
 			case "Insertion":
 				Insertion.sort(a);
 				break;
+			case "_2_1_25_Insertion":
+				_2_1_25_Insertion.sort(a);
+				break;
 			case "Selection":
 				Selection.sort(a);
 				break;
