@@ -35,6 +35,7 @@ public class SortCompare {
 		}
 		return timer.elapsedTime();
 	}
+	
 	/**
 	 * 使用排序算法将T个长度为N的数组排序
 	 * @param alg 排序算法
