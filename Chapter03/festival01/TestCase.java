@@ -5,7 +5,7 @@ import edu.princeton.cs.algs4.StdOut;
 public class TestCase {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		SequentialSearchST<String,Integer> st = new SequentialSearchST<String,Integer>();
 		String[] example = {"S","E","A","R","C","H","E","X","A","M","P","L","E"};
 		//将键值对存入表中
