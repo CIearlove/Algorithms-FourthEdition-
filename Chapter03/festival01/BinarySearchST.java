@@ -20,7 +20,10 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 		//Value类型的Object对象的数组
 		values = (Value[]) new Object[1];
 	}
-	
+	/**
+	 * 调整数组大小
+	 * @param newSize 数组新的大小
+	 */
 	private void resize(int newSize) {
 		Key[] temp1 = (Key[]) new Comparable[newSize];
 		Value[] temp2 = (Value[]) new Object[newSize];
@@ -34,8 +37,8 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	}
 	/**
 	 * 将键值对存入表中
-	 * @param key
-	 * @param val
+	 * @param key 键
+	 * @param val 值
 	 */
 	public void put(Key key,Value val){
 		//键为空，返回
@@ -71,8 +74,8 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	/**
 	 * 获取键key对应的值
 	 * 若键key不存在则返回null
-	 * @param key
-	 * @return
+	 * @param key 键
+	 * @return 键key对应的值,若键key不存在则返回null
 	 */
 	public Value get(Key key) {
 		//符号表为空时
@@ -90,7 +93,7 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	
 	/**
 	 * 从表中删去键key（及其对应的值）
-	 * @param key
+	 * @param key 键
 	 */
 	public void delete(Key key){
 		//当键为空时，返回
@@ -113,8 +116,8 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	
 	/**
 	 * 键key在表中是否有对应的值
-	 * @param key
-	 * @return
+	 * @param key 键
+	 * @return 是返回true，否则返回false
 	 */
 	public boolean contains(Key key){
 		if(get(key)!=null)
@@ -124,21 +127,21 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	
 	/**
 	 * 表是否为空
-	 * @return
+	 * @return 是返回true，否则返回false
 	 */
 	public boolean isEmpty(){
 		return N==0;
 	}
 	/**
 	 * 表中的键值对数量
-	 * @return
+	 * @return 键值对数量
 	 */
 	public int size(){
 		return N;
 	}
 	/**
 	 * 最小的键
-	 * @return
+	 * @return 最小的键
 	 */
 	public Key min(){
 		return keys[0];
@@ -147,7 +150,7 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	
 	/**
 	 * 最大的键
-	 * @return
+	 * @return 最大的键
 	 */
 	public Key max(){
 		return keys[N-1];
@@ -155,7 +158,7 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	}
 	/**
 	 * 小于等于key的最大键
-	 * @param key
+	 * @param key 
 	 */
 	public Key floor(Key key){
 		if(key==null)
@@ -197,7 +200,7 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	 * 如果表中存在该键，rank（）应返回该键的位置，也就是表中小于它的键的数量；
 	 * 如果表中不存在该键，rank（）还是应该返回表中小于它的键的数量
 	 * @param key
-	 * @return
+	 * @return 小于key的键的数量
 	 */
 	public int rank(Key key){
 		int lo=0,hi=N-1;
@@ -218,7 +221,7 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	/**
 	 * 排名为k的键
 	 * @param k的取值范围[0,N-1]
-	 * @return
+	 * @return 排名为k的键
 	 */
 	public Key select(int k){
 		return keys[k];
@@ -237,9 +240,9 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	}
 	/**
 	 * [lo...hi]之间键的数量(符号表中的键)
-	 * @param lo
-	 * @param hi
-	 * @return
+	 * @param lo 开始的键
+	 * @param hi 结束的键
+	 * @return [lo...hi]之间键的数量
 	 */
 	public int size(Key lo,Key hi){
 		if(hi.compareTo(lo)<0)
@@ -251,7 +254,7 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	}
 	/**
 	 * [lo...hi]之间的所有键，已排序
-	 * @return
+	 * @return [lo...hi]之间的所有键
 	 */
 	public Iterable<Key> keys(Key lo,Key hi){
 		Queue<Key> q = new Queue<Key>();
@@ -266,7 +269,7 @@ public class BinarySearchST<Key extends Comparable<Key>,Value> {
 	}
 	/**
 	 * 表中的所有键的集合，已排序
-	 * @return
+	 * @return 表中的所有键的集合
 	 */
 	public Iterable<Key> keys(){
 		return keys(min(),max());
