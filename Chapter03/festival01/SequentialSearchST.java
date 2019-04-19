@@ -32,7 +32,7 @@ public class SequentialSearchST<Key,Value> {
 	 * 遍历链表，用equals（）方法比较需被查找的键和每个结点中的键。
 	 * 如果匹配成功我们就返回相应的值，否则我们返回null。
 	 * @param key
-	 * @return
+	 * @return 键key对应的值,若键key不存在则返回null
 	 */
 	public Value get(Key key){
 		Node tra=first;
@@ -53,8 +53,8 @@ public class SequentialSearchST<Key,Value> {
 	 * 遍历链表，用equals（）方法比较需被查找的键和每个结点中的键。
 	 * 如果匹配成功我们就用第二个参数指定的值更新和该键相关联的值，
 	 * 否则我们就用给定的键值对创建一个新的结点并将其插入链表的开头。
-	 * @param key
-	 * @param val
+	 * @param key 键
+	 * @param val 值
 	 */
 	public void put(Key key,Value val){
 		Node tra=first;
@@ -74,7 +74,7 @@ public class SequentialSearchST<Key,Value> {
 	}
 	/**
 	 * 从表中删去键key（及其对应的值）
-	 * @param key
+	 * @param key 键
 	 */
 	public void delete(Key key){
 		Node tra = first;
@@ -96,7 +96,7 @@ public class SequentialSearchST<Key,Value> {
 	/**
 	 * 键key在表中是否有对应的值
 	 * @param key
-	 * @return
+	 * @return 有返回true，否则返回false
 	 */
 	public boolean contains(Key key){
 		Node tra=first;
@@ -112,21 +112,21 @@ public class SequentialSearchST<Key,Value> {
 	}
 	/**
 	 * 表是否为空
-	 * @return
+	 * @return 
 	 */
 	public boolean isEmpty(){
 		return N==0;
 	}
 	/**
 	 * 表中的键值对数量
-	 * @return
+	 * @return 键值对数量
 	 */
 	public int size(){
 		return N;
 	}
 	/**
 	 * 表中的所有键的集合
-	 * @return
+	 * @return 所有键的集合
 	 */
 	public Iterable<Key> keys(){
 		Node tra=first;
