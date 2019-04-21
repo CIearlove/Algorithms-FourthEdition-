@@ -22,7 +22,12 @@ public class Shell {
 	 * @param a
 	 */
 	public static void sort(Comparable[] a) {
-		int increment = a.length/2;//增量
+		//增量1,4,13,40,121,364,1093...
+		int increment = 1;
+		while(increment<a.length/3){
+			increment = 3*increment+1;
+		}
+
 		while(increment>=1){
 			//System.out.println(increment);
 			//每次排序，根据对应的增量increment，将待排序序列分割成若干个子序列，分别对各子序列进行直接插入排序
@@ -31,7 +36,7 @@ public class Shell {
 					exch(a,j,j-increment);
 				}
 			}
-			increment = increment/2;//新增量
+			increment = increment/3;//新增量
 		}
 	}
 	/**
